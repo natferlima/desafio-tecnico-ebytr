@@ -1,9 +1,9 @@
 import express from 'express';
-import tasksController from '../controllers/tasksController';
+import taskController from '../controllers/taskController';
 
 const router = express.Router();
 
-router.get('/tasks', tasksController);
-router.post('/tasks', tasksController);
-router.put('/tasks/:id', tasksController);
-router.delete('/tasks/:id', tasksController);
+router.get('/tasks', taskController.readAll);
+router.post('/tasks', taskController.create);
+// router.put('/tasks/:id', taskController);
+// router.delete('/tasks/:id', taskController);
