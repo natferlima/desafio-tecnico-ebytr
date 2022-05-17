@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-const model = mongoose.model('Tasks', {
+const model = mongoose.model('Task', {
   description: { type: String, required: true },
   status: { type: String, required: true },
   date: { type: Date, required: true },
