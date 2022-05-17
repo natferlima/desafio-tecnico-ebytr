@@ -1,10 +1,12 @@
-import express from 'express';
-import connection from './connection';
-import routes from './routes';
+const express = require('express');
+const bodyParser = require('body-parser');
+const { connection } = require('./connection');
+const { taskRouter } = require('./routes');
 
 const app = express();
+app.use(bodyParser.json());
 
-app.use('/tasks', routes);
+app.use('/tasks', taskRouter);
 
 connection();
 

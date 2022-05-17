@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 
 const model = mongoose.model('Task', {
   description: { type: String, required: true },
@@ -16,4 +16,4 @@ const create = async (obj) => {
   return result;
 };
 
-export default { create, readAll };
+module.exports = { create, readAll };

@@ -1,6 +1,6 @@
-import task from '../services/task';
+const task = require('../services/task');
 
-const readAll = async (req, res) => {
+const readAll = async (_req, res) => {
   const result = await task.readAll();
   return res.status(200).json(result);
 };
@@ -11,4 +11,4 @@ const create = async (req, res) => {
   return res.status(201).json(result);
 };
 
-export default { readAll, create };
+module.exports = { readAll, create };

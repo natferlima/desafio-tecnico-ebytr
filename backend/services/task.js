@@ -1,4 +1,4 @@
-import task from '../models/task';
+const task = require('../models/task');
 
 const readAll = async () => {
   const result = await task.find();
@@ -10,4 +10,4 @@ const create = async (obj) => {
   return result;
 };
 
-export default { readAll, create };
+module.exports = { readAll, create };
