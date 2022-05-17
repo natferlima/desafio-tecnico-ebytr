@@ -1,7 +1,7 @@
 const task = require('../models/task');
 
 const readAll = async () => {
-  const result = await task.find();
+  const result = await task.readAll();
   return result;
 };
 

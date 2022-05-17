@@ -6,7 +6,7 @@ const { taskRouter } = require('./routes');
 const app = express();
 app.use(bodyParser.json());
 
-app.use('/tasks', taskRouter);
+app.use('/', taskRouter);
 
 connection();
 
