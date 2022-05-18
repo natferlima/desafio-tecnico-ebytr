@@ -10,4 +10,4 @@ app.use('/', taskRouter);
 
 connection();
 
-app.listen(3000, () => console.log('backend rodando na porta 3000'));
+app.listen(3001, () => console.log('backend rodando na porta 3001'));
