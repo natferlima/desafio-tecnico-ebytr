@@ -14,6 +14,7 @@
   "dependencies": {
     "eslint-config-trybe-backend": "^1.0.4",
     "express": "^4.18.1",
+    "joi": "^17.6.0",
     "mongoose": "^6.3.3"
   },
   "devDependencies": {
