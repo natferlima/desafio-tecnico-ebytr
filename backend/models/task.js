@@ -16,4 +16,19 @@ const create = async (obj) => {
   return result;
 };
 
-module.exports = { create, readAll, model };
+const readOne = async (id) => {
+  const result = await model.findById(id);
+  return result;
+};
+
+const update = async (id, obj) => {
+  const result = await model.findByIdAndUpdate(id, obj, { new: true });
+  return result;
+};
+
+const remove = async (id) => {
+  const result = await model.findByIdAndDelete(id);
+  return result;
+};
+
+module.exports = { create, readAll, readOne, update, remove, model };
