@@ -16,4 +16,4 @@ const create = async (obj) => {
   return result;
 };
 
-module.exports = { create, readAll };
+module.exports = { create, readAll, model };
