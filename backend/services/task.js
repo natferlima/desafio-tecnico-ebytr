@@ -10,4 +10,19 @@ const create = async (obj) => {
   return result;
 };
 
-module.exports = { readAll, create };
+const readOne = async (id) => {
+  const result = await task.readOne(id);
+  return result;
+};
+
+const update = async (id, obj) => {
+  const result = await task.update(id, obj);
+  return result;
+};
+
+const remove = async (id) => {
+  const result = await task.remove(id);
+  return result;
+};
+
+module.exports = { readAll, create, readOne, update, remove };
