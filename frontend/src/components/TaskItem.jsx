@@ -1,6 +1,9 @@
-import React from 'react';
+import React,{ useContext } from 'react';
+import GlobalContext from '../context/GlobalContext';
 
 function TaskItem({ task, index }) {
+  const { removeTask } = useContext(GlobalContext);
+
   return (
     <tr>
       <td>{ index + 1 }</td>
@@ -17,6 +20,7 @@ function TaskItem({ task, index }) {
       <td>
         <button
           type="button"
+          onClick={ () => removeTask(task._id) }
         >
           Remover
         </button>

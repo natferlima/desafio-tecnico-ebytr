@@ -10,8 +10,18 @@ function GlobalProvider({ children }) {
     baseURL: 'http://localhost:3001',
   });
 
-  const getTasks = async() => {
+  const getTasks = async () => {
     try{
+      const { data } = await API.get('/tasks');
+      setTasks(data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  const removeTask = async (id) => {
+    try{
+      await API.delete(`/tasks/${id}`);
       const { data } = await API.get('/tasks');
       setTasks(data);
     } catch (error) {
@@ -22,6 +32,7 @@ function GlobalProvider({ children }) {
   const context = {
     tasks,
     getTasks,
+    removeTask,
   };
 
   return (
