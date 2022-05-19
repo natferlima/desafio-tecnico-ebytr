@@ -1,7 +1,9 @@
-import React,{ useContext } from 'react';
+import React,{ useContext, useState } from 'react';
 import GlobalContext from '../context/GlobalContext';
+import EditModal from './EditModal';
 
 function TaskItem({ task, index }) {
+  const [ isModalVisible, setIsModalVisible ] = useState(false);
   const { removeTask } = useContext(GlobalContext);
 
   return (
@@ -13,9 +15,12 @@ function TaskItem({ task, index }) {
       <td>
         <button
           type="button"
+          onClick={ () => setIsModalVisible(true) }
         >
           Editar
         </button>
+        { isModalVisible 
+          && <EditModal isModalVisible={ isModalVisible } setIsModalVisible={ setIsModalVisible } /> }
       </td>
       <td>
         <button
