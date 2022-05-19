@@ -1,6 +1,6 @@
 import React,{ useContext, useState } from 'react';
 import GlobalContext from '../context/GlobalContext';
-import EditModal from './EditModal';
+import TaskModal from './TaskModal';
 
 function TaskItem({ task, index }) {
   const [ isModalVisible, setIsModalVisible ] = useState(false);
@@ -20,7 +20,13 @@ function TaskItem({ task, index }) {
           Editar
         </button>
         { isModalVisible 
-          && <EditModal isModalVisible={ isModalVisible } setIsModalVisible={ setIsModalVisible } /> }
+          && <TaskModal 
+                isModalVisible={ isModalVisible } 
+                setIsModalVisible={ setIsModalVisible } 
+                task={ task } 
+                funcionality="edit" 
+              /> 
+        }
       </td>
       <td>
         <button
