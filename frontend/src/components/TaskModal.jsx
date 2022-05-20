@@ -16,6 +16,16 @@ function TaskModal({ isModalVisible, setIsModalVisible, task, funcionality }) {
     } 
   }
 
+  const edit = () => {
+    editTask(description, status, task._id);
+    setIsModalVisible(false);
+  }
+
+  const create = () => {
+    createTask(description, status);
+    setIsModalVisible(false);
+  }
+
   useEffect(() => {
     valueEdit();
   }, []);
@@ -46,7 +56,7 @@ function TaskModal({ isModalVisible, setIsModalVisible, task, funcionality }) {
       { funcionality === "create" 
         && <button
               type="button"
-              onClick={ () => createTask(description, status) }
+              onClick={ () => create() }
             >
               Enviar
             </button>
@@ -54,7 +64,7 @@ function TaskModal({ isModalVisible, setIsModalVisible, task, funcionality }) {
       { funcionality === "edit" 
         && <button
               type="button"
-              onClick={ () => editTask(description, status, task._id) }
+              onClick={ () => edit() }
             >
               Enviar
             </button>
