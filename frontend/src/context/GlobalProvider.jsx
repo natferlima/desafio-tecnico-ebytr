@@ -1,10 +1,13 @@
 import PropTypes from 'prop-types';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import GlobalContext from './GlobalContext';
 import axios from 'axios';
 
 function GlobalProvider({ children }) {
   const [tasks, setTasks] = useState([]);
+  const [original, setOriginal] = useState([]);
+  const [tasksFilter, setTasksFilter] = useState([]);
+  const [aux, setAux] = useState(null);
 
   const API = axios.create({
     baseURL: 'http://localhost:3001',
@@ -14,6 +17,7 @@ function GlobalProvider({ children }) {
     try{
       const { data } = await API.get('/tasks');
       setTasks(data);
+      setOriginal(data);
     } catch (error) {
       console.log(error);
     }
@@ -49,12 +53,23 @@ function GlobalProvider({ children }) {
     }
   }
 
+  useEffect(() => {
+    console.log('tasksFilter mudou, altera tasks');
+    setTasks(tasksFilter);
+  }, [aux]);
+
   const context = {
     tasks,
     getTasks,
     removeTask,
     createTask,
     editTask,
+    setTasks,
+    tasksFilter,
+    setTasksFilter,
+    aux,
+    setAux,
+    original,
   };
 
   return (

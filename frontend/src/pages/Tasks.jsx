@@ -1,4 +1,5 @@
 import React, { useEffect, useContext, useState } from 'react';
+import SortingAndFilters from '../components/SortingAndFilters';
 import TaskModal from '../components/TaskModal';
 import TasksTable from '../components/TasksTable';
 import GlobalContext from '../context/GlobalContext';
@@ -26,6 +27,7 @@ function Tasks() {
                 funcionality="create"
               /> 
       }
+      <SortingAndFilters />
       <TasksTable />
     </div>
   );
