@@ -43,9 +43,9 @@ function GlobalProvider({ children }) {
     }
   }
 
-  const editTask = async (description, status) => {
+  const editTask = async (description, status, id) => {
     try{
-      await API.put('/tasks', { description, status, date: new Date()});
+      await API.put(`/tasks/${id}`, { description, status, date: new Date()});
       const { data } = await API.get('/tasks');
       setTasks(data);
     } catch (error) {
@@ -54,7 +54,6 @@ function GlobalProvider({ children }) {
   }
 
   useEffect(() => {
-    console.log('tasksFilter mudou, altera tasks');
     setTasks(tasksFilter);
   }, [aux]);
 

@@ -42,7 +42,6 @@ function SortingAndFilters() {
   }
 
   useEffect(() => {
-    console.log('filter selected mudou, chama função ascending');
     switch (filterSelected) {
       case 'Alfabética':
         asc();

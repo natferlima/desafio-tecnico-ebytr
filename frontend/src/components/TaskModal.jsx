@@ -54,7 +54,7 @@ function TaskModal({ isModalVisible, setIsModalVisible, task, funcionality }) {
       { funcionality === "edit" 
         && <button
               type="button"
-              onClick={ () => editTask(description, status) }
+              onClick={ () => editTask(description, status, task._id) }
             >
               Enviar
             </button>
