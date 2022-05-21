@@ -72,6 +72,7 @@ function SortingAndFilters() {
     <div>
       Ordenação:
       <select
+        data-testid="sorting-filters-select"
         value={ filterSelected }
         onChange={ (e) => setFilterSelected(e.target.value) }
       >

@@ -2,7 +2,8 @@ import React, { useState, useContext, useEffect } from 'react';
 import Modal from 'react-modal';
 import GlobalContext from '../context/GlobalContext';
 
-Modal.setAppElement('#root');
+// https://github.com/reactjs/react-modal/issues/632
+if (process.env.NODE_ENV !== 'test') Modal.setAppElement('#root');
 
 function TaskModal({ isModalVisible, setIsModalVisible, task, funcionality }) {
   const { createTask, editTask } = useContext(GlobalContext);
@@ -30,6 +31,7 @@ function TaskModal({ isModalVisible, setIsModalVisible, task, funcionality }) {
     valueEdit();
   }, []);
 
+  // https://www.npmjs.com/package/react-modal
   return (
     <Modal
       isOpen={ isModalVisible }

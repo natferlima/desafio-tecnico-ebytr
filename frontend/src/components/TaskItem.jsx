@@ -8,7 +8,7 @@ function TaskItem({ task, index }) {
 
   return (
     <tr>
-      <td>{ index + 1 }</td>
+      <td data-testid={`task-index-${index}`}>{ index + 1 }</td>
       <td>{ task.description }</td>
       <td>{ task.date }</td>
       <td>{ task.status }</td>

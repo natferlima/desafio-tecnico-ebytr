@@ -15,6 +15,7 @@ function Tasks() {
   return (
     <div>
       <button
+        data-testid="create-button"
         type="button"
         onClick={ () => setIsModalVisible(true) }
       >
