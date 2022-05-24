@@ -24,3 +24,17 @@
 
 **1.** Clone o repositório
 * Use o comando: ```git clone git@github.com:natferlima/desafio-tecnico-ebytr.git ```
+
+**2.** Entre na pasta do repositório e use o seguinte comando: ```npm install ```
+
+**3.** Inicie o mongoDB: ``` sudo systemctl start mongod ```
+* Para quem usa WSL2: ```sudo service mongodb start ```
+
+**4.** Na pasta do backend execute o seguinte comando: ``` npm run dev ```
+* Ou na pasta raiz use: ```npm run dev --prefix backend ```
+
+**5.** Na pasta do frontend execute o seguinte comando: ``` npm start ```
+* Ou na pasta raiz use: ```npm start --prefix frontend ```
+
+
+
