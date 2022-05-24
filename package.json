@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/natferlima/desafio-tecnico-ebytr#readme",
   "dependencies": {
-    "eslint-config-trybe-fundamentals": "^1.1.1"
+    "eslint-config-trybe-fundamentals": "^1.1.1",
+    "react": "^18.1.0",
+    "react-router-dom": "^6.3.0"
   }
 }

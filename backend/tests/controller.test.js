@@ -8,7 +8,7 @@ const { expect } = chai;
 
 /* eslint no-underscore-dangle: 0 */
 
-const LOCALHOST = 'http://localhost:3000';
+const LOCALHOST = 'http://localhost:3001';
 
 describe('Controller Task', function () {
   const taskMock = {
